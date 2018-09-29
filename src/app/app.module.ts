@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {StudentListComponent} from './student-list/student-list.component';
 import {StudentListItemComponent} from './student-list-item/student-list-item.component';
 import {StudentDetailsComponent} from './student-details/student-details.component';
+import {StudentManagerService} from './shared/student-manager.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import {StudentDetailsComponent} from './student-details/student-details.compone
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [StudentManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

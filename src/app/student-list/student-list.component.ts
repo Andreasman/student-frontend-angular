@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Student} from '../shared/student';
+import {StudentManagerService} from '../shared/student-manager.service';
 
 @Component({
   selector: 'sm-student-list',
@@ -10,6 +11,8 @@ export class StudentListComponent implements OnInit {
   students: Student[];
   @Output() showDetailsEvent = new EventEmitter<Student>();
 
+  constructor(private studentManagerService: StudentManagerService) {
+  }
 
   showDetails(student: Student) {
     this.showDetailsEvent.emit(student);
@@ -17,23 +20,7 @@ export class StudentListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.students = [
-      new Student(
-        'Hansi', 'Müller'
-      ),
-      new Student(
-        'Erika', 'Mustermann'
-      ),
-      new Student(
-        'Schantal', 'Schuster'
-      ),
-      new Student(
-        'Jochen', 'Meyer'
-      ),
-      new Student(
-        'Andreas', 'Staecker'
-      )
-    ];
+    this.students = this.studentManagerService.getAll();
   }
 
 }
