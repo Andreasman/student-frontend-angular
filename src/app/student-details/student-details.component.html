@@ -1,0 +1,8 @@
+<div class="ui grid" *ngIf="student">
+  <div class="twelve wide column">
+    <h1 class="ui header">{{ student.firstname }}</h1>
+    <h3 class="ui header">{{ student.lastname }}</h3>
+    <div class="ui divider"></div>
+  </div>
+  <button (click)="showStudentList()" class="ui red button">Zurück zur Studenten-Liste</button>
+</div>
