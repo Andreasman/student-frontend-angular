@@ -1,15 +1,7 @@
 <h1 class="ui header">Studenten Liste</h1>
 <div class="ui middle aligned selection divided list">
-  <a *ngFor="let student of students" class="item">
+  <a class="sm-student-list-item item" *ngFor="let s of students" [student]="s"
+     (click)="showDetails(s)">
 
-    <div class="content">
-      <div class="header">{{ student.firstname }}</div>
-      <div class="description"> {{ student.lastname }} </div>
-      <div class="metadata">kljlkkj
-
-      </div>
-      <div class="banner">erewrw</div>
-
-    </div>
   </a>
 </div>

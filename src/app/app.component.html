@@ -4,8 +4,6 @@
     {{ title }} 1.0
   </h1>
 </div>
-
-<sm-my-lab></sm-my-lab>
-
-
+<sm-student-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></sm-student-list>
+<sm-student-details *ngIf="detailsOn" (showListEvent)="showList()" [student]="student"></sm-student-details>
 

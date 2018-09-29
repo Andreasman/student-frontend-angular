@@ -2,14 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {MyLabComponent} from './my-lab/my-lab.component';
 import {StudentListComponent} from './student-list/student-list.component';
+import {StudentListItemComponent} from './student-list-item/student-list-item.component';
+import {StudentDetailsComponent} from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyLabComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentListItemComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule

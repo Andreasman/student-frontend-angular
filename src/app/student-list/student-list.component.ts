@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Student} from '../shared/student';
 
 @Component({
@@ -8,6 +8,13 @@ import {Student} from '../shared/student';
 })
 export class StudentListComponent implements OnInit {
   students: Student[];
+  @Output() showDetailsEvent = new EventEmitter<Student>();
+
+
+  showDetails(student: Student) {
+    this.showDetailsEvent.emit(student);
+    console.log('showDetailsEvent...');
+  }
 
   ngOnInit() {
     this.students = [
