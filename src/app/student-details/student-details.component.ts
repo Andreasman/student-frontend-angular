@@ -1,17 +1,26 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Student} from '../shared/student';
+import {StudentManagerService} from '../shared/student-manager.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'sm-student-details',
-  templateUrl: './student-details.component.html',
-  styles: []
+  templateUrl: './student-details.component.html'
 })
-export class StudentDetailsComponent {
-  @Input() student: Student;
-  @Output() showListEvent = new EventEmitter<any>();
+export class StudentDetailsComponent implements OnInit {
+  student: Student;
 
-  showStudentList() {
-    this.showListEvent.emit();
+  constructor(
+    private studentService: StudentManagerService,
+    private route: ActivatedRoute) {
+  }
+
+
+  ngOnInit() {
+    const params = this.route.snapshot.params;
+    console.log(params['id']);
+    this.student = this.studentService.getSingle(params['id']);
+    console.log(this.student);
   }
 
 }

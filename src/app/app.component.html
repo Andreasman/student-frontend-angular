@@ -1,9 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }} 1.0
-  </h1>
+<div class="ui three item menu">
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+  <a routerLink="students" routerLinkActive="active" class="item">Students</a>
+
 </div>
-<sm-student-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></sm-student-list>
-<sm-student-details *ngIf="detailsOn" (showListEvent)="showList()" [student]="student"></sm-student-details>
+<div style="text-align:center">
+  <h3>
+    {{ title }} 1.0
+  </h3>
+</div>
+<router-outlet></router-outlet>
+
+<!--<sm-student-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></sm-student-list>-->
+<!--<sm-student-details *ngIf="detailsOn" (showListEvent)="showList()" [student]="student"></sm-student-details>-->
 

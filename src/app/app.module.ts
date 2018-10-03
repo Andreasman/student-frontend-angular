@@ -6,16 +6,19 @@ import {StudentListComponent} from './student-list/student-list.component';
 import {StudentListItemComponent} from './student-list-item/student-list-item.component';
 import {StudentDetailsComponent} from './student-details/student-details.component';
 import {StudentManagerService} from './shared/student-manager.service';
+import {HomeComponent} from './home/home.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     StudentListItemComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AppRoutingModule
   ],
   providers: [StudentManagerService],
   bootstrap: [AppComponent]

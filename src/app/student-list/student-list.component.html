@@ -1,7 +1,9 @@
 <h1 class="ui header">Studenten Liste</h1>
 <div class="ui middle aligned selection divided list">
   <a class="sm-student-list-item item" *ngFor="let s of students" [student]="s"
-     (click)="showDetails(s)">
+     [routerLink]="s.id">
 
   </a>
 </div>
+
+

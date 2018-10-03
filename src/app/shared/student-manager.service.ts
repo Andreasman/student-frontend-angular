@@ -8,24 +8,30 @@ export class StudentManagerService {
   constructor() {
     this.students = [
       new Student(
-        'Hansi', 'Müller'
+        '1', 'Hansi', 'Müller'
       ),
       new Student(
-        'Erika', 'Mustermann'
+        '2', 'Erika', 'Mustermann'
       ),
       new Student(
-        'Schantal', 'Schuster'
+        '3', 'Schantal', 'Schuster'
       ),
       new Student(
-        'Jochen', 'Meyer'
+        '4', 'Jochen', 'Meyer'
       ),
       new Student(
-        'Andreas', 'Staecker'
+        '5', 'Andreas', 'Staecker'
       )
     ];
   }
 
   getAll() {
     return this.students;
+  }
+
+  getSingle(id) {
+    // console.table(this.students);
+
+    return this.students.find(student => student.id === id);
   }
 }
